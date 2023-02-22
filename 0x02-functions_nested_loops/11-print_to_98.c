@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 /**
  * print_to_98 - prints all possible combinations of two two-digit numbers
  * @n: condition number
