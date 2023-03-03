@@ -10,26 +10,26 @@
 
 void print_number(int n)
 {
-	int copy, nth, size = 1, ones = n % 10;
+    int i, j, digit, is_negative;
 
-	n /= 10;
-	copy = n;
-	if (ones < 0)
-	{
-		ones *= -1, copy *= -1, n *= -1;
-		putchar('-');
-	}
-	if (copy > 0)
-	{
-		while (copy / 10 != 0)
-			copy /= 10, size *= 10;
-		while (size > 0)
-		{
-			nth = n / size;
-			putchar('0' + nth);
-			n -= nth * size;
-			size /= 10;
-		}
-	}
-	putchar('0' + ones);
+    is_negative = n < 0 ? 1 : 0;
+    n = is_negative ? -n : n;
+
+    i = 1;
+    j = n;
+    while (j >= 10) {
+        i *= 10;
+        j /= 10;
+    }
+
+    if (is_negative) {
+        _putchar('-');
+    }
+
+    while (i >= 1) {
+        digit = n / i;
+        _putchar(digit + '0');
+        n -= digit * i;
+        i /= 10;
+    }
 }
