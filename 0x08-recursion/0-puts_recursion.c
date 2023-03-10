@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "main.h"
 
 /**
@@ -6,15 +7,11 @@
  * Return: nothing
 */
 
-void _puts_recursion(char *str)
-{
-	if (*str == '\0')
-	{
-		_putchar('\n');
-		return;
-	}
-
-	_putchar(*str);
-
-	_puts_recursion(str + 1);
+void _puts_recursion(char* str) {
+    if (*str == '\0') {
+        putchar('\n');
+        return;
+    }
+    putchar(*str);
+    _puts_recursion(str + 1);
 }
